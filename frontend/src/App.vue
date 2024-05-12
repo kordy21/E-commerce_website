@@ -2,22 +2,29 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Navbar from './components/base/Navbar.vue'
+import MenuMobile from '../src/components/base/MenuMobile.vue';
+
 
 import { ref } from 'vue';
 
 export default {
   components: {
     Navbar,
-    HelloWorld
+    HelloWorld,
+    MenuMobile
   },
   setup() {
     const darkMode = ref(false);
 
-    const handleModeChanged = (isDarkMode) => {
-      darkMode.value = isDarkMode;
+    const toggleDarkMode = () => {
+      darkMode.value = !darkMode.value;
+      if (darkMode.value) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     };
-
-    return { darkMode, handleModeChanged };
+    return { darkMode,toggleDarkMode };
   },
 };
 </script>
@@ -25,7 +32,9 @@ export default {
 <template>
   <header>
     <div class="wrapper">
-      <Navbar @modeChanged="handleModeChanged" />
+      <Navbar :darkMode="darkMode" @toggleDM="toggleDarkMode"/>
+      
+      <RouterView />
       <HelloWorld msg="You did it!" />
 
       <!-- <nav>
@@ -38,18 +47,5 @@ export default {
 </template>
 
 <style scoped>
-.dark-mode {
-  --background-color: #333;
-  --text-color: #fff;
-}
 
-.light-mode {
-  --background-color: #fff;
-  --text-color: #333;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
 </style>
