@@ -46,6 +46,8 @@ export default {
 
 </template>
 
-<style scoped>
-
+<style>
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+}
 </style>

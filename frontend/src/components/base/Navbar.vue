@@ -44,8 +44,8 @@ emits: ['modeChanged'],
     <nav v-else class="flex justify-between dark:bg-primary-100 dark:text-white items-center">
         <div class="flex items-center">
             <a href="#">
-                <img v-if="darkMode" src="../../assets/images/logo-white.avif" width="100" height="35" alt="logo" >
-                <img v-else src="../../assets/images/logo.avif" width="100" height="35" alt="logo" >
+                <img v-if="darkMode" src="../../../public/images/logo-white.avif" width="100" height="35" alt="logo" >
+                <img v-else src="../../../public/images/logo.avif" width="100" height="35" alt="logo" >
             </a>
         </div>
         <div class="gap-8 font-semibold items-center hidden sm:flex ">
