@@ -31,7 +31,7 @@
         { id: 5, image: '../../../public/images/category/earings.avif', title: 'Bracelets', link: '#' },
       ]);
   
-      const cardWidthClass = ref('w-1/2 md:w-1/3 lg:w-1/5'); // 1/5 for 5 cards on desktop, 1/3 for 3 cards on tablet, 1/2 for 2 cards on mobile
+      const cardWidthClass = ref('w-1/2 md:w-1/3 lg:w-1/5'); 
   
       const getVisibleCards = () => {
         const width = window.innerWidth;
@@ -74,7 +74,7 @@
   };
   </script>
   
-  <style scoped>
-  /* Optional: Add custom styles if needed */
-  </style>
+    <style scoped>
+
+    </style>
   
