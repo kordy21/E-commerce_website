@@ -51,15 +51,15 @@ class CategoryViewSet(ModelViewSet):
 
 
 
-@api_view()
-def api_categories(request):
-    categories=Category.objects.all()
-    serializer=CategorySerializer(categories,many=True)
-    return Response(serializer.data)
+# @api_view()
+# def api_categories(request):
+#     categories=Category.objects.all()
+#     serializer=CategorySerializer(categories,many=True)
+#     return Response(serializer.data)
 
-@api_view()
-def api_category(request,pk):
-    category=get_object_or_404(Category,category_id=pk)
-    # product=Products.objects.get(id=pk)
-    serializer=CategorySerializer(category)
-    return Response(serializer.data)
+# @api_view()
+# def api_category(request,pk):
+#     category=get_object_or_404(Category,category_id=pk)
+#     # product=Products.objects.get(id=pk)
+#     serializer=CategorySerializer(category)
+#     return Response(serializer.data)

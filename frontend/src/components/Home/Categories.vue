@@ -29,6 +29,11 @@
         { id: 3, image: '../../../public/images/category/10-3_180x.avif', title: 'Shop Earrings', link: '#' },
         { id: 4, image: '../../../public/images/category/10-2_180.avif', title: 'Wedding & Bridal', link: '#' },
         { id: 5, image: '../../../public/images/category/earings.avif', title: 'Bracelets', link: '#' },
+        { id: 6, image: '../../../public/images/category/10-5_180x.avif', title: 'Charms', link: '#' },
+        { id: 7, image: '../../../public/images/category/10-4_180x.avif', title: 'Necklaces', link: '#' },
+        { id: 8, image: '../../../public/images/category/10-3_180x.avif', title: 'Shop Earrings', link: '#' },
+        { id: 9, image: '../../../public/images/category/10-2_180.avif', title: 'Wedding & Bridal', link: '#' },
+        { id: 10, image: '../../../public/images/category/earings.avif', title: 'Bracelets', link: '#' },
       ]);
   
       const cardWidthClass = ref('w-1/2 md:w-1/3 lg:w-1/5'); 

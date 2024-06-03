@@ -1,6 +1,7 @@
 <script setup>
 import Slider from '../components/Home/Slider.vue';
 import Categories from '../components/Home/Categories.vue';
+import ProductsFavourates from '../components/Home/ProductsFavourates.vue';
 
 </script>
 
@@ -8,5 +9,6 @@ import Categories from '../components/Home/Categories.vue';
   <main>
     <Slider />
     <Categories />
+    <ProductsFavourates />
   </main>
 </template>
