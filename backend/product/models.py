@@ -20,7 +20,7 @@ class Category(models.Model):
         return self.title
     
     
-class Products (models.Model):
+class Product (models.Model):
     
     CHOICES = (
         (0, 'Zero Star'),
@@ -37,7 +37,7 @@ class Products (models.Model):
     image = models.ImageField(upload_to = 'image/img-product',  blank = True, null=True, default='')
     old_price = models.FloatField(default=100.00)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True, related_name='products')
-    slug = models.SlugField(blank=True,null=True)
+    slug = models.SlugField(default=None,blank=True,null=True)
     id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, unique=True)
     Wishlist=models.BooleanField(default=False)
     evaluation=models.IntegerField(default=0,choices=CHOICES)
@@ -52,9 +52,22 @@ class Products (models.Model):
     
     def save(self,*args, **kwargs):
         self.slug=slugify(self.name)
-        super(Products,self).save(*args,**kwargs)
+        super(Product,self).save(*args,**kwargs)
         
         
     def __str__(self):
         return self.name
+    
+class Cart(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True)
+    created = models.DateTimeField(auto_now_add=True)
+    
+
+    def __str__(self):
+        return str(self.id)
+
+class Cartitems(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE,related_name='items', blank=True, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True, related_name='cartitems')
+    quantity = models.IntegerField(default=0)
     
