@@ -39,9 +39,9 @@ emits: ['modeChanged'],
 </script>
 
 <template>
-  <div>
+  <div class="sticky top-0 w-full z-50 bg-white bg-opacity-70">
     <MenuMobile v-if="isMenuMobile" @MenuMobile="toggleMenuMobile"/>
-    <nav v-else class="flex justify-between dark:bg-primary-100 dark:text-white items-center">
+    <nav v-else class="flex justify-between dark:bg-primary-100 dark:bg-opacity-90 dark:text-white items-center ">
         <div class="flex items-center">
             <a href="#">
                 <img v-if="darkMode" src="../../../public/images/logo-white.avif" width="100" height="35" alt="logo" >

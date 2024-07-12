@@ -1,6 +1,7 @@
 <script >
 import { RouterLink, RouterView } from 'vue-router'
 import Navbar from './components/base/Navbar.vue'
+import Footer from './components/base/Footer.vue'
 import MenuMobile from '../src/components/base/MenuMobile.vue';
 
 
@@ -9,7 +10,8 @@ import { ref } from 'vue';
 export default {
   components: {
     Navbar,
-    MenuMobile
+    MenuMobile,
+    Footer
   },
   setup() {
     const darkMode = ref(false);
@@ -33,6 +35,7 @@ export default {
       <Navbar :darkMode="darkMode" @toggleDM="toggleDarkMode"/>
       
       <RouterView />
+      <Footer />
     </div>
   </header>
 

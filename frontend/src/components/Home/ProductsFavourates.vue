@@ -7,16 +7,18 @@
           :key="index"
         >
           <img :src="product.image" :alt="product.name" class="w-full h-auto mb-4" />
-          <h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3>
-          <div class="rating flex justify-center mb-2">
-            <span
-              v-for="star in 5"
-              :key="star"
-              class="star text-xl"
-              :class="{ 'text-secondary-100': star <= product.rating, 'text-gray-300 ': star > product.rating }"
-            >★</span>
-          </div>
-          <p class="text-xl font-bold text-secondary-100">LE {{ product.price }}</p>
+          <main class="text-center">
+            <div class="rating flex justify-center mb-2">
+              <span
+                v-for="star in 5"
+                :key="star"
+                class="star text-xl"
+                :class="{ 'text-secondary-100': star <= product.rating, 'text-gray-300 ': star > product.rating }"
+              >★</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ product.name }}</h3>
+            <p class="text-lg text-secondary-100">LE {{ product.price }}</p> 
+          </main>
         </div>
       </div>
       <div class="navigation-buttons flex justify-around mt-12">
