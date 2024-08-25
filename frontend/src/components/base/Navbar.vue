@@ -52,6 +52,7 @@ emits: ['modeChanged'],
             <RouterLink :to="{ name: 'home' }" :class="{ active: isActive('home') }">HOME</RouterLink>
             <RouterLink :to="{ name: 'shop' }" :class="{ active: isActive('shop') }">SHOP</RouterLink>
             <RouterLink :to="{ name: 'contact' }" :class="{ active: isActive('contact') }">CONTACT</RouterLink>
+            <RouterLink :to="{ name: 'productForm' }" :class="{ active: isActive('productForm') }">Add Product</RouterLink>
         </div>
         <div class="flex gap-5 items-center">
             <div class="cursor-pointer">

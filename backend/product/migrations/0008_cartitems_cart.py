@@ -6,9 +6,9 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('product', '0007_cart_cartitems'),
-    ]
+    # dependencies = [
+    #     ('product', '0007_cart_cartitems'),
+    # ]
 
     operations = [
         migrations.AddField(

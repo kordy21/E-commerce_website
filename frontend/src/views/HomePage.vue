@@ -3,6 +3,7 @@ import Slider from '../components/Home/Slider.vue';
 import Categories from '../components/Home/Categories.vue';
 import Section3 from '../components/Home/Section3.vue';
 import ProductsFavourates from '../components/Home/ProductsFavourates.vue';
+import ProductsFavouratesCopy from '../components/Home/ProductsFavouratesCopy.vue';
 import Video from '../components/Home/Video.vue';
 import JewelleryOnline from '../components/Home/JewelleryOnline.vue';
 
@@ -13,7 +14,8 @@ import JewelleryOnline from '../components/Home/JewelleryOnline.vue';
     <Slider />
     <Categories />
     <Section3 />
-    <ProductsFavourates />
+    <ProductsFavouratesCopy />
+    <!-- <ProductsFavourates /> -->
     <Video />
     <JewelleryOnline />
   </main>

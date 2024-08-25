@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import ProductsSerializer ,CategorySerializer,CartSerializer
+from .serializers import ProductsSerializer ,CategorySerializer,CartSerializer ,CartItemSerializer
 from rest_framework.viewsets import ModelViewSet,GenericViewSet
 
 from django_filters.rest_framework import DjangoFilterBackend
@@ -8,7 +8,7 @@ from rest_framework.filters import OrderingFilter
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.mixins import CreateModelMixin ,DestroyModelMixin,RetrieveModelMixin
 
-from ..models import Product,Category,Cart
+from ..models import Product,Category,Cart ,Cartitems
 from .filters import ProductFilter
 
 
@@ -16,6 +16,7 @@ from .filters import ProductFilter
 # from rest_framework.decorators import api_view
 # from rest_framework.response import Response 
 # from rest_framework import status
+
 
 class ProductsViewSet(ModelViewSet):
     queryset = Product.objects.all()
@@ -37,7 +38,11 @@ class CartViewSet(CreateModelMixin,RetrieveModelMixin,DestroyModelMixin,GenericV
     queryset = Cart.objects.all()
     serializer_class= CartSerializer
 
-
+class CartItemViewSet(ModelViewSet):
+    def get_queryset(self):
+        return Cartitems.objects.filter(cart_id=self.kwargs["cart_pk"])
+    
+    serializer_class=CartItemSerializer
 
 # @api_view(['GET','POST'])
 # def api_products(request):

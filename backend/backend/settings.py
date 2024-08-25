@@ -130,6 +130,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK={
-    'PAGE_SIZE': 3
+    'PAGE_SIZE': 5
 }
 CORS_ALLOW_ALL_ORIGINS = True
